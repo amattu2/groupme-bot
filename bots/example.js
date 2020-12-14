@@ -26,6 +26,7 @@ var responses = [
 function handler() {
   // Variables
   var request = JSON.parse(this.req.chunks[0]);
+  var matched = false;
 
   // Standard request validation
   if (!request.text || !request.sender_type || request.sender_type != "user") {
@@ -37,8 +38,9 @@ function handler() {
   // Find correct prompt
   responses.forEach(function(response) {
     // Check against prompt
-    if (response.Prompt.test(request.text)) {
+    if (!matched && response.Prompt.test(request.text)) {
       // Reply
+      matched = true;
       sendReply(response.Responses);
       return true;
     }
