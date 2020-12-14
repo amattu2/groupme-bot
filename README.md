@@ -5,10 +5,7 @@ N/A
 N/A
 
 # Notes
-N/A
+From https://github.com/groupme/bot-tutorial-nodejs
 
 # Requirements & Dependencies
 N/A
-
-# Previews
-![preview image](https://via.placeholder.com/350x240)
