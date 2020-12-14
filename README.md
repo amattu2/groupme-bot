@@ -14,9 +14,11 @@ This is a simple GroupMe prompt-response style bot. It allows one single Heroku 
 3. Add the new bot to `bots` in `index.js`
 
 `newbot: require('./bots/newbot.js')`
+
 4. Add the new bot ID from GroupMe as a env variable
 
 (Eg. `newbot=XYTZEGRG343222D`)
+
 5. Restart
 
 # Notes
