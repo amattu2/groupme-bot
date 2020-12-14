@@ -37,13 +37,11 @@ function handler() {
   // Find correct prompt
   responses.forEach(function(response) {
     // Check against prompt
-    if (!response.Prompt.test(request.text)) {
-      continue;
+    if (response.Prompt.test(request.text)) {
+      // Reply
+      sendReply(response.Responses);
+      return true;
     }
-
-    // Reply
-    sendReply(response.Responses);
-    return true;
   });
 
   // Default
