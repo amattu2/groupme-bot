@@ -11,7 +11,7 @@ var options = {
 };
 var responses = [
   {
-    Prompt: new RegExp(/(status report)|(!studyguides)/ig),
+    Prompt: new RegExp(/(status report)|(\!studyguides)/ig),
     Responses: [`Exam 1 Study Guide: https://www.notion.so/CMSC216-Study-Guide-Exam-1-8e0630b29e2a4ebd9d9a2506b95a51f5
 
 Exam 2 Study Guide: https://www.notion.so/CMSC216-EXAM-2-REVIEW-cf5de65b7173481ab83b9f08ab2b9aba
