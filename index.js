@@ -3,22 +3,20 @@ var http = require('http');
 var director = require('director');
 var bots = {
   md: require('./bots/md.js'),
-  test: require('./bots/test.js')
+  test: require('./bots/test.js'),
+  example: require('./bots/example.js')
 };
 
 // Setup routes
 var router = new director.http.Router({
-  '/': {
-    get: function() {
-      this.res.writeHead(200);
-      this.res.end();
-    }
-  },
   '/md': {
     post: bots.md.handler
   },
   '/test': {
     post: bots.test.handler
+  },
+  '/example': {
+    post: bots.example.handler
   }
 });
 
