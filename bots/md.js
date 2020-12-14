@@ -2,7 +2,6 @@
 var HTTPS = require('https');
 
 // Variables
-var botID = process.env.BOT_ID;
 var botRegex = new RegExp(/(MD)|(Maryland)|(old bay)/gi);
 var whereRegex = new RegExp(/(where is md)|(where is maryland)/gi);
 var botResponses = ["O.H.I.O. can suck my crab", "I love Maryland", "Yes.", "Bless all of you Marylanders",
@@ -17,7 +16,7 @@ var options = {
 /*
   Standard new message handler
 */
-function respond() {
+function handler() {
   // Variables
   var request = JSON.parse(this.req.chunks[0]);
 
@@ -48,7 +47,7 @@ function respond() {
 function botResponse() {
   // Variables
   var body = {
-    "bot_id": botID,
+    "bot_id": process.env.md_bot_id,
     "text": botResponses[Math.floor(Math.random() * botResponses.length)]
   };
   var botReq = HTTPS.request(options, function(res) {
@@ -75,7 +74,7 @@ function botResponse() {
 function whereResponse() {
   // Variables
   var body = {
-    "bot_id": botID,
+    "bot_id": process.env.md_bot_id,
     "text": "It's right here, my best friend:",
     "attachments" : [{"type"  : "location", "lat": "39.0458", "lng": "76.6413", "name": "Mother Land, USA"}]
   };
@@ -98,4 +97,4 @@ function whereResponse() {
 }
 
 // Export function
-exports.respond = respond;
+exports.handler = handler;
