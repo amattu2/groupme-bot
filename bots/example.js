@@ -1,6 +1,7 @@
 // Files
 var HTTPS = require('https');
 var path = require('path');
+var template = require('../assets/templater.js');
 
 // Variables
 var filename = path.basename(__filename).replace(".js", ""); // Used to find BOT_ID
@@ -68,9 +69,10 @@ function sendReply(replyOptions, request) {
   }
 
   // Variables
+  var reply = replyOptions[Math.floor(Math.random() * replyOptions.length)];
   var body = {
     "bot_id": process.env[filename],
-    "text": (replyOptions[Math.floor(Math.random() * replyOptions.length)] || "").replace("{{name}}", (request.name ? request.name : ""))
+    "text": template.replace(reply, request)
   };
   var botReq = HTTPS.request(options, function(res) {
     if (res.statusCode != 202) {
