@@ -4,13 +4,10 @@ var HTTPS = require('https');
 // Variables
 var botID = process.env.BOT_ID;
 var botRegex = new RegExp(/(MD)|(Maryland)|(old bay)/gi);
-var naveeRegex = new RegExp(/(navee)/gi);
 var whereRegex = new RegExp(/(where is md)|(where is maryland)/gi);
 var botResponses = ["O.H.I.O. can suck my crab", "I love Maryland", "Yes.", "Bless all of you Marylanders",
   "If you do not live in Maryland, do you even live?", "Did someone say MARYLAND?!?!?!?!", "Put some Old Bay on your lives",
   "If you hate your life, you probably do not live in Maryland", "Herman only curves native born Marylanders"];
-var naveeResponses = ["Lets voteban Navee S. from Maryland", "Navee committed crimes against Maryland",
-  "Navee doesnt deserve Old Bay", "Navee is a meanie *sad_face*"];
 var options = {
   hostname: 'api.groupme.com',
   path: '/v3/bots/post',
@@ -36,9 +33,6 @@ function respond() {
     } else if (botRegex.test(request.text)) {
       console.log('Response 2');
       botResponse();
-    } else if (naveeRegex.test(request.text)) {
-      console.log('Response 3');
-      naveeResponse();
     } else {
       console.log("No RegExp matches");
     }
@@ -56,33 +50,6 @@ function botResponse() {
   var body = {
     "bot_id": botID,
     "text": botResponses[Math.floor(Math.random() * botResponses.length)]
-  };
-  var botReq = HTTPS.request(options, function(res) {
-    if (res.statusCode != 202) {
-      console.log('Message failed to send with a HTTP ' + res.statusCode);
-    }
-  });
-
-  // Events
-  botReq.on('error', function(err) {
-    console.log('Message failed to send with a error '  + JSON.stringify(err));
-  });
-  botReq.on('timeout', function(err) {
-    console.log('Message failed to send with a timeout '  + JSON.stringify(err));
-  });
-
-  // Send Request
-  botReq.end(JSON.stringify(body));
-}
-
-/*
-  Standard Navee response
-*/
-function naveeResponse() {
-  // Variables
-  var body = {
-    "bot_id": botID,
-    "text": naveeResponses[Math.floor(Math.random() * naveeResponses.length)]
   };
   var botReq = HTTPS.request(options, function(res) {
     if (res.statusCode != 202) {
