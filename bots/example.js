@@ -11,6 +11,10 @@ var options = {
 };
 var responses = [
   {
+    Prompt: new RegExp(/(what is my name)/ig),
+    Responses: ["Your name is {{name}}"]
+  },
+  {
     Prompt: new RegExp(/(hello)|(hey)|(goodmorning)/ig), /* Messages to reply to */
     Responses: ["Sup", "How goes it", "Keep it real"] /* Random response from array, do NOT use special chars */
   },
@@ -41,7 +45,7 @@ function handler() {
     if (!matched && response.Prompt.test(request.text)) {
       // Reply
       matched = true;
-      sendReply(response.Responses);
+      sendReply(response.Responses, request);
       return true;
     }
   });
@@ -51,7 +55,7 @@ function handler() {
   this.res.end();
 }
 
-function sendReply(replyOptions) {
+function sendReply(replyOptions, request) {
   // Validate replyOptions parameter
   if (!replyOptions || !(replyOptions instanceof Array) || replyOptions.length < 1) {
     console.log("No valid reply options provided");
@@ -66,7 +70,7 @@ function sendReply(replyOptions) {
   // Variables
   var body = {
     "bot_id": process.env[filename],
-    "text": replyOptions[Math.floor(Math.random() * replyOptions.length)]
+    "text": (replyOptions[Math.floor(Math.random() * replyOptions.length)] || "").replace("{{name}}", (request.name ? request.name : ""))
   };
   var botReq = HTTPS.request(options, function(res) {
     if (res.statusCode != 202) {
