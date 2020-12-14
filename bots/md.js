@@ -47,7 +47,7 @@ function handler() {
 function botResponse() {
   // Variables
   var body = {
-    "bot_id": process.env.md_bot_id,
+    "bot_id": process.env.md,
     "text": botResponses[Math.floor(Math.random() * botResponses.length)]
   };
   var botReq = HTTPS.request(options, function(res) {
@@ -74,7 +74,7 @@ function botResponse() {
 function whereResponse() {
   // Variables
   var body = {
-    "bot_id": process.env.md_bot_id,
+    "bot_id": process.env.md,
     "text": "It's right here, my best friend:",
     "attachments" : [{"type"  : "location", "lat": "39.0458", "lng": "76.6413", "name": "Mother Land, USA"}]
   };
