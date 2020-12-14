@@ -22,7 +22,7 @@ var responses = [
   },
   {
     Prompt: new RegExp(/(curve)|(grade curve)|(test curve)/ig),
-    Responses: ["... a curve?", "You guy actually think I would curve you", "Sorry, no curve. People are out here getting 100% as it is"]
+    Responses: ["... a curve?", "You guy actually think I would curve you", "Sorry, no curve. People are out here getting A's as it is"]
   }
 ];
 
