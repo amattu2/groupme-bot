@@ -12,13 +12,17 @@ var options = {
 };
 var responses = [
   {
-    Prompt: new RegExp(/(hi)|(hello)|(hey)|(hello nathan)|(hey nathan)|(nathan m)|(hi nathan)/ig),
+    Prompt: new RegExp(/(nathan)|(hello)|(hey)|(hello nathan)|(hey nathan)|(nathan m)|(hi nathan)/ig),
     Responses: ["Hello there, {{name}}.", "How's it going.", "Hidely hodely, neighboroonie."]
   },
   {
     Prompt: new RegExp(/(tests)|(how hard are the tests)|(hard test)/ig),
     Responses: ["What do you mean 'the tests are hard'?!?!?", "You guys are dumb, these tests are easy peasy",
       "Sorry, you only get 50 minutes to do 2 hours worth of work.", "I love linear algebra"]
+  },
+  {
+    Prompt: new RegExp(/(curve)|(grade curve)|(test curve)/ig),
+    Responses: ["... a curve?", "You guy actually think I would curve you", "Sorry, no curve. People are out here getting 100% as it is"]
   }
 ];
 
