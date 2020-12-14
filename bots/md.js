@@ -16,7 +16,7 @@ var responses = [
       "Hello.", "That do be my name."]
   },
   {
-    Prompt: new RegExp(/(MD)|(Maryland)|(old bay)/gi),
+    Prompt: new RegExp(/(MD)|(Maryland)|(old bay)/ig),
     Responses: ["O.H.I.O. can suck my crab", "I love Maryland", "Yes.", "Bless all of you Marylanders",
       "If you do not live in Maryland, do you even live?", "Did someone say MARYLAND?!?!?!?!", "Put some Old Bay on your lives",
       "If you hate your life, you probably do not live in Maryland", "Herman only curves native born Marylanders",
