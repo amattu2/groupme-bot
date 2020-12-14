@@ -3,7 +3,8 @@ var http = require('http');
 var director = require('director');
 var bots = {
   md: require('./bots/md.js'),
-  example: require('./bots/example.js')
+  example: require('./bots/example.js'),
+  nmanning: require('./bots/nmanning.js')
 };
 
 // Setup routes
@@ -13,6 +14,9 @@ var router = new director.http.Router({
   },
   '/example': {
     post: bots.example.handler
+  },
+  '/nmanning': {
+    post: bots.nmanning.handler
   }
 });
 
