@@ -10,10 +10,10 @@ var options = {
   path: '/v3/bots/post',
   method: 'POST'
 };
-var responses = [
+var messagePrompts = [
   {
-    Prompt: new RegExp(/(what is my name)/ig),
-    Responses: ["Your name is {{name}}"]
+    Prompt: new RegExp(/(what is my name)/ig), /* Single prompt */
+    Responses: ["Your name is {{name}}"] /* Demonstrate placeholders */
   },
   {
     Prompt: new RegExp(/(hello)|(hey)|(goodmorning)/ig), /* Messages to reply to */
@@ -41,12 +41,12 @@ function handler() {
   }
 
   // Find correct prompt
-  responses.forEach(function(response) {
+  messagePrompts.forEach(function(messagePrompt) {
     // Check against prompt
-    if (!matched && response.Prompt.test(request.text)) {
+    if (!matched && messagePrompt.Prompt.test(request.text)) {
       // Reply
       matched = true;
-      sendReply(response.Responses, request);
+      sendReply(messagePrompt.Responses, request);
       return true;
     }
   });
