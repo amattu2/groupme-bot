@@ -1,33 +1,38 @@
-var http, director, cool, bot, router, server, port;
+// Files
+var http = require('http');
+var director = require('director');
+var bot = require('./bot.js');
 
-http        = require('http');
-director    = require('director');
-cool        = require('cool-ascii-faces');
-bot         = require('./bot.js');
-
-router = new director.http.Router({
-  '/' : {
+// Setup routes
+var router = new director.http.Router({
+  '/': {
     post: bot.respond,
-    get: ping
+    get: function() {
+      this.res.writeHead(200);
+      this.res.end();
+    }
+  },
+  '/md': {
+    get: function() {
+      this.res.writeHead(200);
+      this.res.end("go away");
+    }
   }
 });
 
-server = http.createServer(function (req, res) {
+// Setup server
+var server = http.createServer(function (req, res) {
+  // Variables
   req.chunks = [];
+
+  // Events
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
   });
-
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
 });
-
-port = Number(process.env.PORT || 5000);
+var port = Number(process.env.PORT || 5000);
 server.listen(port);
-
-function ping() {
-  this.res.writeHead(200);
-  this.res.end();
-}
