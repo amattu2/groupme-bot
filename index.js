@@ -3,7 +3,6 @@ var http = require('http');
 var director = require('director');
 var bots = {
   md: require('./bots/md.js'),
-  test: require('./bots/test.js'),
   example: require('./bots/example.js')
 };
 
@@ -11,9 +10,6 @@ var bots = {
 var router = new director.http.Router({
   '/md': {
     post: bots.md.handler
-  },
-  '/test': {
-    post: bots.test.handler
   },
   '/example': {
     post: bots.example.handler
