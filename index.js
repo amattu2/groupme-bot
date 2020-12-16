@@ -20,7 +20,7 @@ var router = new director.http.Router({
   '/nmanning': {
     post: bots.nmanning.handler
   },
-  'l-herman': {
+  '/l-herman': {
     post: bots.lherman.handler
   },
   '/status-report': {
