@@ -12,8 +12,18 @@ var options = {
 };
 var responses = [
   {
+    Prompt: new RegExp(/(professor herman)|(professor larry)|(prof larry)|(prof herman)/ig),
+    Responses: ["Shankar might go by Professor but you can just call me instructor", "Please don't use that terminology, I do not go by instructor"]
+  },
+  {
+    Prompt: new RegExp(/((larry)|(herman))[\s](i have a question))/ig),
+    Responses: ["Save your questions for the end", "Uhhhh how about, how about you use the raise hand option, we don't wanna have any interuptions disrupting the lesson, so just use the raise hand option to ask a question"]
+  },
+  {
     Prompt: new RegExp(/(larry)|(herman)/ig),
-    Responses: ["No.. I'm on a roll here", "Uhhh, that's not quite it.", "Ahhh not quite, but almost", "Please discuss this in office hours"]
+    Responses: ["No.. I'm on a roll here", "Uhhh, that's not quite it.",
+    "Ahhh not quite, but almost", "Please discuss this in office hours",
+    "I don't take questions from non-Marylanders", "Sorry, use that little 'Raise Hand' feature"]
   }
 ];
 
