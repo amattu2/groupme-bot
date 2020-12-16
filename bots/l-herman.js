@@ -14,7 +14,7 @@ var responses = [
   {
     Prompt: new RegExp(/(professor herman)|(professor larry)|(prof larry)|(prof herman)/ig),
     Responses: ["Shankar might go by Professor but you can just call me instructor",
-    "Please don't use that terminology, I do not go by instructor"]
+    "Please don't use that terminology, I do not go by professor"]
   },
   {
     Prompt: new RegExp(/(((larry)|(herman))[\s](i have a question))/ig),
