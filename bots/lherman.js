@@ -12,9 +12,14 @@ var options = {
 };
 var responses = [
   {
+    Prompt: new RegExp(/((what if my)[\s]((power)|(internet))[\s](goes out))/ig),
+    Responses: ["Turn off your other electronics to fix that", "Hmm, that's something you will need to deal with on your own",
+    "It would suck to be you, I guess"]
+  },
+  {
     Prompt: new RegExp(/(professor herman)|(professor larry)|(prof larry)|(prof herman)/ig),
-    Responses: ["Shankar might go by Professor but you can just call me instructor",
-    "Please don't use that terminology, I do not go by professor"]
+    Responses: ["I think you mean lecturer", "I'm a lecturer, not a professor", "Shankar might go by Professor but you can just call me instructor",
+    "Please don't use that terminology", "I do not go by professor"]
   },
   {
     Prompt: new RegExp(/(((larry)|(herman))[\s](i have a question))/ig),
