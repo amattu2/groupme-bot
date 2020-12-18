@@ -13,7 +13,7 @@ var options = {
 var messagePrompts = [
   {
     Prompt: new RegExp(/((final exam weight)|(final weight)|(16\%)|(what is the exam weight)|(exam weight))/ig),
-    Responses: ["My dear friend, {{name}}..The final exam weight is 16 percent of our final."]
+    Responses: ["My dear friend, {{name}}..The FE weight is 16 percent of our grade."]
   }
 ];
 
