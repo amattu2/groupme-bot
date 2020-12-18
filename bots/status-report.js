@@ -11,7 +11,7 @@ var options = {
 };
 var responses = [{
     Prompt: new RegExp(/(status report)|(\!studyguides)/ig),
-    Responses: ["Credit: The amazing Joy T.\n\nExam 1 Study Guide: https://www.notion.so/CMSC216-Study-Guide-Exam-1-8e0630b29e2a4ebd9d9a2506b95a51f5\nExam 2 Study Guide: https://www.notion.so/CMSC216-EXAM-2-REVIEW-cf5de65b7173481ab83b9f08ab2b9aba\nExam 3 Study Guide: https://www.notion.so/CMSC216-EXAM-3-STUDY-GUIDE-dc271f71da5f4416b6950506dd95d5cf\nStudy Guide After those: https://www.notion.so/Rest-of-Stuff-4e2d74b41fd644c5a6d6988bcf68e63b"]
+    Responses: ["Silly boi, you don't need this information anymore.\n\nAs a side note, @Joy T. is a blessing from the heavens."]
 }];
 
 /*
