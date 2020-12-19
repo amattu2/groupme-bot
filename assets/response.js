@@ -32,6 +32,7 @@ function build(str, request, bot_id) {
     "attachments": []
   };
   var user_name = (request.name && typeof(request.name) === "string" ? "@" + request.name.trim() : "");
+  var user_text = (request.text && typeof(request.text) === "string" ? request.text : "");
 
   // Replace Name
   if (body.text.indexOf("{{user_name}}") >= 0) {
@@ -44,6 +45,11 @@ function build(str, request, bot_id) {
       "loci": [[body.text.indexOf(name), name.length]],
       "user_ids": [request.sender_id]
     });
+  }
+  // Replace Text
+  if (body.text.indexOf("{{user_text}}") >= 0) {
+    // Replace placeholder
+    body.text = body.text.replace("{{user_text}}", user_text);
   }
 
   // Return response
