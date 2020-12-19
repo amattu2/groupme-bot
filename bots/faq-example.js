@@ -1,10 +1,9 @@
 // Files
 var HTTPS = require('https');
 var path = require('path');
-var template = require('../assets/templater.js');
 
 // Variables
-var filename = path.basename(__filename).replace(".js", ""); // Used to find BOT_ID
+var filename = path.basename(__filename).replace(".js", ""); // Used to find bot ID
 var options = {
   hostname: 'api.groupme.com',
   path: '/v3/bots/post',
