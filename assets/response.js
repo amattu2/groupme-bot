@@ -37,7 +37,7 @@ function build(str, request, bot_id) {
   // Replace Name
   if (body.text.indexOf("{{user_name}}") >= 0) {
     // Replace placeholder
-    body.text = body.text.replace("{{user_name}}", name);
+    body.text = body.text.replace("{{user_name}}", user_name);
 
     // Add attachments
     body.attachments.push({
