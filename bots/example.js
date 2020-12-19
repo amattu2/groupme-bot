@@ -17,7 +17,11 @@ var messagePrompts = [
   },
   {
     Prompt: new RegExp(/(what is my name)/ig), /* Single prompt */
-    Responses: ["Your name is {{user_name}}"] /* Demonstrate placeholders */
+    Responses: ["Your name is {{user_name}}"] /* Demonstrate name placeholder */
+  },
+  {
+    Prompt: new RegExp(/(quote my test)/ig), /* Single prompt */
+    Responses: ["The text you sent was\n\n{{user_text}}"] /* Demonstrate user text placeholder */
   },
   {
     Prompt: new RegExp(/(hello)|(hey)|(goodmorning)/ig), /* Messages to reply to */
