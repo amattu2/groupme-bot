@@ -20,7 +20,7 @@ var messagePrompts = [
     Responses: ["Your name is {{user_name}}"] /* Demonstrate name placeholder */
   },
   {
-    Prompt: new RegExp(/(quote my test)/ig), /* Single prompt */
+    Prompt: new RegExp(/(copy my text)/ig), /* Single prompt */
     Responses: ["The text you sent was\n\n{{user_text}}"] /* Demonstrate user text placeholder */
   },
   {
