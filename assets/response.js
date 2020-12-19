@@ -42,7 +42,7 @@ function build(str, request, bot_id) {
     // Add attachments
     body.attachments.push({
       "type": "mentions",
-      "loci": [[body.text.indexOf(name), name.length]],
+      "loci": [[body.text.indexOf(user_name), user_name.length]],
       "user_ids": [request.sender_id]
     });
   }
