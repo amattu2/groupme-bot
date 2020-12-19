@@ -34,7 +34,7 @@ function build(str, request, bot_id) {
   var name = (request.name && typeof(request.name) === "string" ? "@" + request.name.trim() : "");
 
   // Replace Name
-  if (body.text.indexof("{{name}}") >= 0) {
+  if (body.text.indexOf("{{name}}") >= 0) {
     // Replace placeholder
     body.text = body.text.replace("{{name}}", name);
 
