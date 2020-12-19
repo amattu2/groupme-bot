@@ -31,12 +31,12 @@ function build(str, request, bot_id) {
     "text": str,
     "attachments": []
   };
-  var name = (request.name && typeof(request.name) === "string" ? "@" + request.name.trim() : "");
+  var user_name = (request.name && typeof(request.name) === "string" ? "@" + request.name.trim() : "");
 
   // Replace Name
-  if (body.text.indexOf("{{name}}") >= 0) {
+  if (body.text.indexOf("{{user_name}}") >= 0) {
     // Replace placeholder
-    body.text = body.text.replace("{{name}}", name);
+    body.text = body.text.replace("{{user_name}}", name);
 
     // Add attachments
     body.attachments.push({
