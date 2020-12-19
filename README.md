@@ -2,7 +2,7 @@
 This is a simple GroupMe prompt-response style bot. It allows one single Heroku app to run multiple bots.
 
 # Usage
-##### Initial Setup
+#### Initial Setup
 1. Deploy to Heroku (Or elsewhere)
 2. Create a GroupMe bot (https://dev.groupme.com/bots)
 3. Get the bot ID (token) from GroupMe and set it as `example` in the Heroku variable config (Config vars)
